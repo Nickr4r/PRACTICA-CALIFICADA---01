@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards Animadas con Imagen</title>
+  <style>
+    /* Estilo general */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+
+    /* Título centrado */
+    .titulo {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Contenedor de cards */
+    .container {
+      display: flex;
+      gap: 40px;
+    }
+
+    /* Card */
+    .card {
+      width: 400px;
+      height: 300px;
+      perspective: 1000px;
+     }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateX(180deg) rotateY(180deg);
+    }
+
+    /* Cara frontal y trasera */
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: white;
+      text-align: center;
+    }
+
+    /* Imagen de fondo frontal */
+    .card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Texto encima de la imagen */
+    .card-front span {
+      position: absolute;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+
+    .card-back {
+      background: #e74c3c;
+      transform: rotateY(180deg);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="titulo">
+    <h1>PAGINA PRINCIPAL</h1>
+  </div>
+
+  <div class="container">
+    <!-- Card 1 -->
+    <div class="card">
+      <a href="/EJERCICIO 01/page01.html">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="page01.jpg" alt="Page1">
+            <span>Page1</span>
+          </div>
+          <div class="card-back">Ir a Page1</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <a href="EJERCICIO 02/Practica02/page02.html">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="page02.jpg" alt="Page2">
+            <span>Page2</span>
+          </div>
+          <div class="card-back">Ir a Page2</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <a href="/EJERCICIO 03/Ejercicio4/page03.html">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="page03.jpg" alt="Page3">
+            <span>Page3</span>
+          </div>
+          <div class="card-back">Ir a Page3</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
